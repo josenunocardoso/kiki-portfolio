@@ -1,0 +1,46 @@
+# Gitignore for Java (Maven) and Node.js projects
+
+# Java/Maven
+/target/
+/.mvn/
+/pom.xml.tag
+/pom.xml.versionsBackup
+/pom.xml.next
+/release.properties
+/release-pom.xml
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Build artifacts
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# Logs
+*.log
+logs/
+
+# OS generated files
+.DS_Store
+thumbs.db
+
+# Node.js
+node_modules/
+dist/
+build/
+.env
+.env.local
+.env.*.local
+
+# Frontend build output
+/frontend/dist
+
+# Media storage (local filesystem)
+/media_storage/
