@@ -15,10 +15,20 @@ services:
     build: ./frontend
     container_name: kiki-frontend
     restart: unless-stopped
+
+  caddy:
+    image: caddy:alpine
+    container_name: kiki-caddy
+    restart: unless-stopped
     ports:
-      - "3000:80"
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy-data:/data
+      - caddy-config:/config
     depends_on:
-      - mongo
+      - frontend
 
   # backend:
   #   build: ./backend
@@ -35,3 +45,5 @@ services:
 
 volumes:
   mongo-data:
+  caddy-data:
+  caddy-config:
